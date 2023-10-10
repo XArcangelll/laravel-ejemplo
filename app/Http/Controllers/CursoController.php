@@ -67,8 +67,9 @@ class CursoController extends Controller
     // }
 
     public function edit(Curso $curso){
+        $marcas = Marca::all();
             
-        return view('cursos.edit',compact('curso'));
+        return view('cursos.edit',compact('curso','marcas'));
 
     }
 

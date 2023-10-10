@@ -54,6 +54,20 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 name="categoria" id="categoria" type="text" placeholder="Categoría del Curso">
                         </div>
+
+                        <div class="mb-6">
+                            <label for="countries"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Selecciona una marca</label>
+                            <select id="marca_id" name="marca_id"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option value="">Choose a country</option>
+                                @foreach ($marcas as  $marca)
+                                <option value="{{$marca->id}}" {{ old('marca_id',$curso->marca_id) == $marca->id ? 'selected' : '' }} >{{$marca->name}}</option>
+                              
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div class="flex items-center justify-between">
                             <button
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
