@@ -25,7 +25,8 @@ class CursoRequest extends FormRequest
             "name" => "required|unique:cursos,name,".$this->validateId(),
             "descripcion" => "required",
             "categoria"=> "required",
-            "slug" => "required|unique:cursos,slug,".$this->validateId()
+            "slug" => "required|unique:cursos,slug,".$this->validateId(),
+            "marca_id" => "required|exists:marcas,id"
 
         ];
     }
@@ -47,6 +48,8 @@ class CursoRequest extends FormRequest
            'categoria.required' => 'La categoría es obligatoria',
            "name.unique" => "El nombre debe ser único",
            "slug.unique" => "El slug debe ser único",
+           "marca_id.required" => "Debe seleccionar una marca",
+           "marca_id.exists" => "Marca desconocida"
          ];
     }
 

@@ -17,7 +17,8 @@ class Curso extends Model
         'name',
         'descripcion',
         'categoria',
-        'slug'
+        'slug',
+        'marca_id'
     ];
 
     //es lo mismo q arriba solo q en vez de aceptar los campos los va a ignorar
@@ -28,6 +29,10 @@ class Curso extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function marcas(){
+        return $this->belongsTo('App\Models\Marca');
     }
 
 }

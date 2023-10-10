@@ -4,19 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CursoRequest;
 use App\Models\Curso;
+use App\Models\Marca;
 use Illuminate\Http\Request;
 
 class CursoController extends Controller
 {
     public function index(){
-
         $cursos = Curso::orderby("id","desc")->paginate(10); 
 
         return view('cursos.index',compact('cursos'));
     }
 
     public function create(){
-        return view('cursos.create');
+
+        $marcas = Marca::all();
+
+        return view('cursos.create',compact('marcas'));
     }
 
     // public function show($id){

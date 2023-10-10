@@ -23,7 +23,8 @@ class CursoFactory extends Factory
            'name' => fake()->sentence() ,
            'descripcion' => fake()->paragraph(),
            'slug'=> fake()->slug(),
-           'categoria' => fake()->randomElement(['desarrollo web','desarrollo movil'])
+           'categoria' => fake()->randomElement(['desarrollo web','desarrollo movil']),
+           'marca_id' => fake()->randomElement([1,2])
         ];
     }
 }
